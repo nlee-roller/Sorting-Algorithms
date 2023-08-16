@@ -1,10 +1,8 @@
 #All Sorting Algorithms
-# Each prints corresponding values at end of each corresponding iteration
-#ex print statement - bubbleSort([7, 5, 6, 2, 1])
+#Each prints corresponding values at end of each corresponding iteration
+#example print statement - bubbleSort([7, 5, 6, 2, 1])
 #must call sort alg at bottom
-'''
-If asked to describe how a sorting alg works, pull up lecture 11, 12 or 13.py
-'''
+
 def bubbleSort(aList): #O-notation is O(n^2)
     for passnum in range(len(aList)-1, 0, -1):
         for i in range(passnum):
@@ -142,33 +140,3 @@ def mergeSort(aList): #O(nlog n) with O(n) additional memory required
             aList[k] = righthalf[j]
             j += 1
             k += 1
-
-'''
-Divide and Conquer Algorithms
-* Subdivide a larger problem into smaller problms
-* Solve each smaller part
-* Combine solution of smaller sub problems back into the larger problem
-    * Quick Sort's partition step and Merge Sort's merge step have the same
-    Big-O running time in all cases (assuming both steps are using
-    a Python List with n elements).
-Merge Sort
-Idea: Break a list into sublists where the size == 1
-    * A sublist with 1 element is considered sorted
-
-* Merge each small sorted sublist together to form a sorted larger list
-* Coninue to merge ublists into the original list.
-* The merge step is 0(n)
-* The splitting step is O(log n)
-* Entire algorithm is O(nlog n) (consistently)
-* BUT! Requires an additional O(n) memory
-'''
-
-''' Quick Sort
-* Another divide and conquer algorithm
-* ew can improve running times to O(nlog n) (like mergesort) in a TYPICAL case,
-but we'll also see hw tthis can lead to O(n^2) in a worst case scenario
-    * worst case is if sublists are not evenly split
-'''
-
-mergeSort([2, 5, 6, 8, 3, 4, 7, 10])
-
